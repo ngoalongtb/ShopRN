@@ -39,8 +39,9 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.listen(1111, function () {
-    console.log('Example app listening on port 1111!');
+var server = app.listen(process.env.PORT || 1111, function () {
+    var port = server.address().port;
+    console.log('Example app listening on port ' + port);
 });
 
 // mongoose.connect('mongodb://localhost:27017/HauiHH');
